@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js" integrity="sha512-hIeMcj07bbpdm6W49lxdLrW7D1eLJF54UP0dQ7Ts3mPqa/Zjc51zI7l1A+QlHhijEluigbBfwLM9YkkLmtkb0A==" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="subject"></div>
+        <div id="toc"></div>
+        <div id="control"></div>
+        <div id="content"></div>
+        <script>
+            function subject() {
+                document.querySelector('#subject').innerHTML= `
+                        <header>
+                            <h1>WEB</h1>
+                            Hello, WEB!
+                        </header>
+                `
+            }
+            function TOC() {
+                document.querySelector('#toc').innerHTML= `
+                        <nav>
+                            <ol>
+                                <li><a href="1.html">HTML</a></li>
+                                <li><a href="2.html">CSS</a></li>
+                            </ol>
+                        </nav>
+                `
+            }
+            function control() {
+                document.querySelector('#control').innerHTML= `
+
+                    <article>
+                        <ul>
+                            <li> <a href="/create">create</a></li>
+                            <li> <a href="/update">update</a></li>
+                            <li><input type="button" value="delete"></li>
+                        </ul>
+                    </article>
+                `
+            }
+            function content() {
+                document.querySelector('#content').innerHTML= `
+                    <h2>HTML</h2>
+                    HTML is ...
+                `
+            }
+            function reducer(state, action){
+                var newState;
+                
+                if(state === undefined) { //초기화
+                    return {{
+                        max_id:2,
+                        mode:'welcome',
+                        selcted_id:2,
+                        contents:[
+                            {id:1,title:'HTML',desc:'HTML is ..'},
+                            {id:2,title:'CSS', desc:'CSS is ..'}
+                        ]
+                    }
+
+                return newState; //변경된 값 리턴
+            }
+            Redux.createStore(reducer);
+            subject();
+            TOC();
+            control();
+            content();
+        </script>
+
+
+
+
+    </body>
+
+</html>
